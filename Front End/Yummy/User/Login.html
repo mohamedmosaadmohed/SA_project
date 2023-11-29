@@ -96,6 +96,26 @@
 <!--===============================================================================================-->
 	<script src="../assets/js/mainLR"></script>
 	<script src="mo.js"></script>
-
+	<script>
+		$(document).ready(function() {
+		  // Add an event listener for the form submission
+		  $('.login100-form-btn').on('click', function(e) {
+			e.preventDefault();
+	  
+			// Get the values of email and password
+			var email = $('#email').val();
+			var password = $('input[name="pass"]').val();
+	  
+			// Check if the email and password are 'admin'
+			if (email === 'admin' && password === 'admin') {
+			  // Redirect to another page (replace 'your-page.html' with the actual page)
+			  window.location.href = '../Admin/index2.html';
+			} else {
+			  // Perform the default login action if the credentials are not 'admin'
+			  $('Login.html').submit();
+			}
+		  });
+		});
+	  </script>
 </body>
 </html>
