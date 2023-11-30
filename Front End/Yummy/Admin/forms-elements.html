@@ -347,8 +347,20 @@
                         <input type="number" class="form-control" id="priceInput" required>
                     </div>
                 </div>
+                <div class="row mb-3">
+                  <label for="inputCategory" class="col-sm-2 col-form-label">Category</label>
+                  <div class="col-sm-10">
+                      <select class="form-control" id="categoryInput" required>
+                         <!-- <option value="" disabled selected>Select Category</option> -->
+                          <option value="category1" selected>Starters</option>
+                          <option value="category2">Breakfast</option>
+                          <option value="category3">Lunch</option>
+                          <option value="category3">Dinner</option>
+                      </select>
+                  </div>
+              </div>
                 <div class="row mb-2">
-                    <div class="col-sm-20 " style="text-align: center;padding-top: 10px;">
+                    <div class="col-sm-20 " style="text-align: center;padding-top: 20px;">
                         <button type="button" onclick="Add()" class="btn btn-primary" style="padding:6px 23px 6px 23px">Create</button>
                     </div>
                 </div>
