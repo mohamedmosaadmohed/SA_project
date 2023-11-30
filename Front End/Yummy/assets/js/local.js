@@ -22,13 +22,14 @@ function Add() {
     var description = document.getElementById("descriptionInput").value;
     var photoInput = document.getElementById("inputPhoto");
     var price = document.getElementById("priceInput").value;
+    var category = document.getElementById("categoryInput").value;
 
     // Retrieve existing data from localStorage
     var existingData = JSON.parse(localStorage.getItem("Object")) || [];
 
     if (photoInput.files.length > 0) {
         var photo = `../assets/img/menu/${photoInput.files[0].name}`;
-        var newObj = { id: existingData.length + 1, Name: name, Description: description, Photo: photo, price: price };
+        var newObj = { id: existingData.length + 1, Name: name, Description: description, Photo: photo, price: price, category: category  };
 
         // Add the new data to existing data
         existingData.push(newObj);
@@ -36,7 +37,9 @@ function Add() {
         // Store the updated array back in localStorage
         localStorage.setItem("Object", JSON.stringify(existingData));
         alert("Product added successfully");
+        
         ReadAll();
+        
         location.href = "tables-general.html";
 
     } else {
@@ -59,4 +62,40 @@ function Delete(id) {
     }
 }
 
+
+
+function ReadAllcards() {
+    var storedData = localStorage.getItem("Object");
+    var Objectdata = storedData ? JSON.parse(storedData) : [];
+
+    Objectdata.forEach(record => {
+        var categoryValue = record.category;
+        var cardContainer = document.getElementById(categoryValue);
+
+        if (cardContainer) {
+           
+            
+            var cardsHTML = `
+                <div class="col-lg-4 menu-item">
+                    <div class="menu-img-container">
+                        <a href="item${record.id}.html"><img src="${record.Photo}" class="menu-img img-fluid" alt="Product Photo"></a>
+                        <div class="info">
+                            <h4>${record.Name}</h4>
+                            <p class="ingredients">${record.Description}</p>
+                            <p class="price">${record.price}</p>
+                        </div>
+                    </div>
+                </div><!-- Menu Item -->
+            `;
+
+            cardContainer.innerHTML += cardsHTML;
+        } 
+    });
+}
+
+
+ReadAllcards();
+    
+   
+  
 
