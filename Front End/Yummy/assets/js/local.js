@@ -10,8 +10,8 @@ function ReadAll() {
         <td>${record.Description}</td>
         <td><img src="${record.Photo}" alt="Product Photo" style="width: 40px;"></td>
         <td>${record.price}</td>
-        <td><button type="button" class="btn btn-primary">Update</button></td>
-        <td><button type="button" class="btn btn-danger">Delete</button></td>
+        <td><button type="button" class="btn btn-primary" onclick={update(${record.id})}>Update</button></td>
+        <td><button type="button" class="btn btn-danger" onclick={Delete(${record.id})}>Delete</button></td>
     </tr>`
     ))
     table.innerHTML = element;
@@ -42,10 +42,24 @@ function Add() {
         location.href = "tables-general.html";
 
     } else {
-        alert("Please select a photo");
+        alert("Not added");
     }
 }
+function Delete(id) {
+    var confirmation = confirm("Are you sure you want to delete this product?");
+    
+    if (confirmation) {
+        // Retrieve existing data from localStorage
+        var existingData = JSON.parse(localStorage.getItem("Object")) || [];
 
+        // Filter out the record with the specified ID
+        var updatedData = existingData.filter(record => record.id !== id);
+
+        // Store the updated array back in localStorage
+        localStorage.setItem("Object", JSON.stringify(updatedData));
+        ReadAll();
+    }
+}
 
 function ReadAllcards() {
     var storedData = localStorage.getItem("Object");
@@ -76,4 +90,4 @@ function ReadAllcards() {
     
    
   
-  
+
