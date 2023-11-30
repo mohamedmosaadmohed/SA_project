@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main>
+        <form id="paymentForm" onsubmit="return submitForm()">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" required>
+            <span class="error" id="cardNumberError"></span>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <select id="countryCode" name="countryCode">
+                <option value="us">+1 (US)</option>
+                <option value="uk">+44 (UK)</option>
+                <option value="uk">+20 (ARE)</option>
+            </select>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+            <span class="error" id="phoneNumberError"></span>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required>
+            <span class="error" id="emailError"></span>
+
+            <label for="nameOnCard">Name on Card:</label>
+            <input type="text" id="nameOnCard" name="nameOnCard" required>
+            <span class="error" id="nameOnCardError"></span>
+
+            <button type="submit">Pay Now</button>
+        </form>
+
+        // Order Summary Form 
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="orderList">
+                // Sample values for online food order
+                <li id="item1" data-price="10" data-quantity="1">
+                    <span class="item-name">Burger</span>
+                    <span class="item-quantity">
+                        <button onclick="decreaseQuantity('item1')">-</button>
+                        <span id="quantityItem1">1</span>
+                        <button onclick="increaseQuantity('item1')">+</button>
+                    </span>
+                    <span class="item-price">$10.00</span>
+                    <button onclick="removeItem('item1')">Remove</button>
+                </li>
+                <li id="item2" data-price="5" data-quantity="2">
+                    <span class="item-name">Pizza</span>
+                    <span class="item-quantity">
+                        <button onclick="decreaseQuantity('item2')">-</button>
+                        <span id="quantityItem2">2</span>
+                        <button onclick="increaseQuantity('item2')">+</button>
+                    </span>
+                    <span class="item-price">$10.00</span>
+                    <button onclick="removeItem('item2')">Remove</button>
+                </li>
+                // Additional items
+                <li id="item3" data-price="8" data-quantity="1">
+                    <span class="item-name">Salad</span>
+                    <span class="item-quantity">
+                        <button onclick="decreaseQuantity('item3')">-</button>
+                        <span id="quantityItem3">1</span>
+                        <button onclick="increaseQuantity('item3')">+</button>
+                    </span>
+                    <span class="item-price">$8.00</span>
+                    <button onclick="removeItem('item3')">Remove</button>
+                </li>
+                <li id="item4" data-price="12" data-quantity="3">
+                    <span class="item-name">Pasta</span>
+                    <span class="item-quantity">
+                        <button onclick="decreaseQuantity('item4')">-</button>
+                        <span id="quantityItem4">3</span>
+                        <button onclick="increaseQuantity('item4')">+</button>
+                    </span>
+                    <span class="item-price">$36.00</span>
+                    <button onclick="removeItem('item4')">Remove</button>
+                </li>
+            </ul>
+            <div class="total-price" id="totalPrice">$64.00</div>
+        </div>
+    </main>
+
+<script src="script.js"></script>
+</body>
+
+</html>
+
+
+
