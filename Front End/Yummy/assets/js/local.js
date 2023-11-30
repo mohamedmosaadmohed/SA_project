@@ -46,6 +46,34 @@ function Add() {
         alert("Not added");
     }
 }
+
+
+function update(id) {
+    var existingData = JSON.parse(localStorage.getItem("Object")) || [];
+    var recordToUpdate = existingData.find(record => record.id === id);
+
+    if (recordToUpdate) {
+        // Prompt the user for updated information
+        var newName = prompt("Enter updated product name:", recordToUpdate.Name);
+        var newDescription = prompt("Enter updated product description:", recordToUpdate.Description);
+        var newPrice = prompt("Enter updated product price:", recordToUpdate.price);
+
+        // Update the record with the new information
+        recordToUpdate.Name = newName || recordToUpdate.Name;
+        recordToUpdate.Description = newDescription || recordToUpdate.Description;
+        recordToUpdate.price = newPrice || recordToUpdate.price;
+
+        // Store the updated array back in localStorage
+        localStorage.setItem("Object", JSON.stringify(existingData));
+
+        // Refresh the view
+        ReadAll();
+    } else {
+        alert("Product not found for update.");
+    }
+}
+
+
 function Delete(id) {
     var confirmation = confirm("Are you sure you want to delete this product?");
     
