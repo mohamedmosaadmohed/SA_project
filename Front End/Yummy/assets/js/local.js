@@ -10,6 +10,7 @@ function ReadAll() {
         <td>${record.Description}</td>
         <td><img src="${record.Photo}" alt="Product Photo" style="width: 40px;"></td>
         <td>${record.price}</td>
+        <td>${record.category}</td>
         <td><button type="button" class="btn btn-primary" onclick={update(${record.id})}>Update</button></td>
         <td><button type="button" class="btn btn-danger" onclick={Delete(${record.id})}>Delete</button></td>
     </tr>`
