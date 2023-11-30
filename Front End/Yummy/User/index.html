@@ -24,11 +24,10 @@
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
   <!-- Template Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
 
-  
 </head>
 
 <body>
@@ -78,36 +77,24 @@
 
     </div>
   </header><!-- End Header -->
-  <body>
-    <div class="wrapper">
-      <div id="search-container">
-        <input
-          type="search"
-          id="search-input"
-          placeholder="Search product name here.."
-        />
-        <button id="search">Search</button>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center section-bg">
+    <div class="container">
+      <div class="row justify-content-between gy-5">
+        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+          <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
+          <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+          <img src="../assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">
+        </div>
       </div>
-      <div id="buttons">
-        <button class="button-value" onclick="filterProduct('all')">All</button>
-        <button class="button-value" onclick="filterProduct('Topwear')">
-          starter
-        </button>
-        <button class="button-value" onclick="filterProduct('Bottomwear')">
-          breakfast
-        </button>
-        <button class="button-value" onclick="filterProduct('Jacket')">
-          lunch
-        </button>
-        <button class="button-value" onclick="filterProduct('Watch')">
-          dinner
-        </button>
-      </div>
-      <div id="products"></div>
     </div>
-    <!-- Script -->
-    
-  </body>
   </section><!-- End Hero Section -->
 
   <main id="main">
@@ -730,7 +717,6 @@
   <script src="../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="search.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/local.js"></script>
 </body>
