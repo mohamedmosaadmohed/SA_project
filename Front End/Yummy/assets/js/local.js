@@ -36,7 +36,9 @@ function Add() {
         // Store the updated array back in localStorage
         localStorage.setItem("Object", JSON.stringify(existingData));
         alert("Product added successfully");
+        
         ReadAll();
+        
         location.href = "tables-general.html";
 
     } else {
@@ -44,3 +46,34 @@ function Add() {
     }
 }
 
+
+function ReadAllcards() {
+    var storedData = localStorage.getItem("Object");
+    var Objectdata = storedData ? JSON.parse(storedData) : [];
+    var cardContainer = document.getElementById("menuContainer");
+    var cardsHTML = "";
+
+    Objectdata.map(record => {
+        cardsHTML += `
+            <div class="col-lg-4 menu-item">
+                <div class="menu-img-container">
+                    <a href="item${record.id}.html"><img src="${record.Photo}" class="menu-img img-fluid" alt="Product Photo"></a>
+                    <div class="info">
+                        <h4>${record.Name}</h4>
+                        <p class="ingredients">${record.Description}</p>
+                        <p class="price">${record.price}</p>
+                    </div>
+                </div>
+            </div><!-- Menu Item -->
+        `;
+    });
+
+    cardContainer.innerHTML = cardsHTML;
+    
+}
+
+ ReadAllcards();
+    
+   
+  
+  
