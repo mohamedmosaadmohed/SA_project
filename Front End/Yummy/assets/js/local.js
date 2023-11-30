@@ -83,6 +83,7 @@ function ReadAllcards() {
                             <h4>${record.Name}</h4>
                             <p class="ingredients">${record.Description}</p>
                             <p class="price">${record.price}</p>
+                            <button class="button">Add To Cart</button>
                         </div>
                     </div>
                 </div><!-- Menu Item -->
@@ -93,7 +94,7 @@ function ReadAllcards() {
         } 
     });
     
-
+    
     
 
     
