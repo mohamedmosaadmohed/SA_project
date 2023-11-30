@@ -71,7 +71,7 @@ function ReadAllcards() {
     Objectdata.forEach(record => {
         var categoryValue = record.category;
         var cardContainer = document.getElementById(categoryValue);
-
+        var allContainer = document.getElementById('all')
         if (cardContainer) {
            
             
@@ -89,8 +89,14 @@ function ReadAllcards() {
             `;
 
             cardContainer.innerHTML += cardsHTML;
+            allContainer.innerHTML += cardsHTML;
         } 
     });
+    
+
+    
+
+    
 }
 
 
