@@ -1,8 +1,3 @@
-let data = [
-    { id: 1, Name: "Magnam Tiste", Description: "Lorem, deren, trataro, filede, nerada", Photo: "../assets/imgA/favicon.png", price: "$9.95" },
-    { id: 2, Name: "Tiste", Description: "Lorem, deren, trataro, filede, nerada", Photo: "../assets/imgA/favicon.png", price: "$20" }
-];
-
 function ReadAll() {
     var storedData = localStorage.getItem("Object");
     var Objectdata = storedData ? JSON.parse(storedData) : [];
@@ -28,16 +23,24 @@ function Add() {
     var photoInput = document.getElementById("inputPhoto");
     var price = document.getElementById("priceInput").value;
 
+    // Retrieve existing data from localStorage
+    var existingData = JSON.parse(localStorage.getItem("Object")) || [];
+
     if (photoInput.files.length > 0) {
-        var photo = `../assets/${photoInput.files[0].name}`;
-        var newObj = { id: data.length + 1, Name: name, Description: description, Photo: photo, price: price };
-        data.push(newObj);
-        localStorage.setItem("Object", JSON.stringify(data));
+        var photo = `../assets/img/menu/${photoInput.files[0].name}`;
+        var newObj = { id: existingData.length + 1, Name: name, Description: description, Photo: photo, price: price };
+
+        // Add the new data to existing data
+        existingData.push(newObj);
+
+        // Store the updated array back in localStorage
+        localStorage.setItem("Object", JSON.stringify(existingData));
+        alert("Product added successfully");
         ReadAll();
-        // Display success alert
-        window.alert("Product added successfully");
+        location.href = "tables-general.html";
+
     } else {
-        // Display error alert
-        window.alert("Please select a photo");
+        alert("Please select a photo");
     }
 }
+
