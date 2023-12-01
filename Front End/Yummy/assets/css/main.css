@@ -948,17 +948,23 @@ section {
   height: 70%;
 }
 
-.menu .tab-content .menu-item .button {
+.menu .tab-content .menu-item .button{
   font-size: 20px;
-    padding: 6px 10px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    margin-left: 20px;
-    font-family: cursive;
-    margin-top: -20px;
- 
-    
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  border-color:wheat;
+  color: black;
+  cursor: pointer;
+  margin-left: 20px;
+  font-family: cursive;
+  background-color: wheat;
+}
+button:hover{
+  background-color:white;
+  border-color:white ;
+  color:#ce1212;
+
 }
 
 
