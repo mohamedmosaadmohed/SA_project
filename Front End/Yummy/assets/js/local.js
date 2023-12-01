@@ -55,14 +55,36 @@ function update(id) {
 
     if (recordToUpdate) {
         // Prompt the user for updated information
-        var newName = prompt("Enter updated product name:", recordToUpdate.Name);
-        var newDescription = prompt("Enter updated product description:", recordToUpdate.Description);
-        var newPrice = prompt("Enter updated product price:", recordToUpdate.price);
+        var newName = prompt("Enter updated name:", recordToUpdate.Name);
+        var newDescription = prompt("Enter updated description:", recordToUpdate.Description);
+        var newPrice = prompt("Enter updated price:", recordToUpdate.price);
+
+        // Ask if the user wants to update the photo
+        var updatePhoto = confirm("Do you want to update the photo?");
+        var newPhoto;
+        if (updatePhoto) {
+            // Get the new photo URL
+            newPhoto = prompt("Enter updated photo URL:", recordToUpdate.Photo);
+        }
+
+        // Ask if the user wants to update the category
+        var updateCategory = confirm("Do you want to update the category?");
+        var newCategory;
+        if (updateCategory) {
+            // Get the new category
+            newCategory = prompt("Enter category (breakfast, lunch, dinner):", recordToUpdate.category);
+            // Validate the new category
+            while (!["breakfast", "lunch", "dinner"].includes(newCategory.toLowerCase())) {
+                newCategory = prompt("Invalid category. Enter category (breakfast, lunch, dinner):", recordToUpdate.category);
+            }
+        }
 
         // Update the record with the new information
         recordToUpdate.Name = newName || recordToUpdate.Name;
         recordToUpdate.Description = newDescription || recordToUpdate.Description;
         recordToUpdate.price = newPrice || recordToUpdate.price;
+        recordToUpdate.Photo = newPhoto || recordToUpdate.Photo;
+        recordToUpdate.category = newCategory || recordToUpdate.category;
 
         // Store the updated array back in localStorage
         localStorage.setItem("Object", JSON.stringify(existingData));
@@ -73,6 +95,7 @@ function update(id) {
         alert("Product not found for update.");
     }
 }
+
 
 
 function Delete(id) {
