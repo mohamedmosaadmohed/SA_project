@@ -135,7 +135,7 @@ function ReadAllcards() {
                             <h4>${record.Name}</h4>
                             <p class="ingredients">${record.Description}</p>
                             <p class="price">${record.price}</p>
-                            <button class="button">Add To Cart</button>
+                            <a href="cart.html" target="_blank"><button onclick="addToDynamicList('${record.Photo}')">Add to Cart</button> </a>
                         </div>
                     </div>
                 </div><!-- Menu Item -->
