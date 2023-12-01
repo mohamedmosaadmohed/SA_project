@@ -88,12 +88,13 @@ button:hover{
         
               <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="Product.html">Menu</a></li>
-                    <li><a href="index.html#events">Events</a></li>
-                    <li><a href="index.html#chefs">Chefs</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
+                  <li><a href="#hero">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#menu">Menu</a></li>
+                  <li><a href="#events">Events</a></li>
+                  <li><a href="#chefs">Chefs</a></li>
+                  <li><a href="#gallery">Gallery</a></li>
+                  <li><a href="cart.html">cart</a></li>
                   <li class="dropdown"><a href="index.html"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                     <ul>
                       <li><a href="#">Drop Down 1</a></li>
@@ -125,7 +126,7 @@ button:hover{
           <br>
           <br>
          <div class="product-container">
-             <img class="product-img" src="../assets/img/menu/menu-item-4.png" style="width: 300px;height: 300px;">
+             <img id="Favorites" class="product-img" src="../assets/img/menu/menu-item-4.png" style="width: 300px;height: 300px;">
                <div class="product-description">
                  <h2 style="color: #ce1212;">Eos Luibusdam</h2>
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac purus in leo convallis volutpat ac ut lorem. Nulla facilisi. In hac habitasse platea dictumst.</p>
@@ -133,7 +134,7 @@ button:hover{
                  <p><strong style="color: #ce1212;">Price:</strong> $12.95</p>
                  <p><strong style="color: #ce1212;">Availability:</strong> Online</p>
                 </div>
-               <button >Add To Cart</button>   
+                <a href="cart.html" target="_blank"><button onclick="addToDynamicList('../assets/img/menu/menu-item-1.png')">Add to Cart</button> </a>    
          </div>
     </body>
 </html>
